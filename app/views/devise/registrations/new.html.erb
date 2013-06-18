@@ -1,0 +1,14 @@
+<h2>Registrar</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+  <%= f.input :username %>
+  <%= f.input :nome %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+
+  <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

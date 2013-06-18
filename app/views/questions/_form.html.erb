@@ -1,0 +1,18 @@
+<%= simple_form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
+  
+  <%= f.input :assunto %>
+  <%= f.input :enunciado %>
+  <%= f.input :alternativa_a %>
+  <%= f.input :alternativa_b %>
+  <%= f.input :alternativa_c %>
+  <%= f.input :alternativa_d %>
+  <%= f.input :alternativa_e %>
+  <%= f.input :alternativa_correta %>
+  <%= f.input :tags %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                questions_path, :class => 'btn' %>
+  </div>
+<% end %>

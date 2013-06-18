@@ -1,0 +1,37 @@
+<%- model_class = Question -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:assunto) %>:</strong></dt>
+  <dd><%= @question.assunto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:enunciado) %>:</strong></dt>
+  <dd><%= @question.enunciado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_a) %>:</strong></dt>
+  <dd><%= @question.alternativa_a %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_b) %>:</strong></dt>
+  <dd><%= @question.alternativa_b %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_c) %>:</strong></dt>
+  <dd><%= @question.alternativa_c %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_d) %>:</strong></dt>
+  <dd><%= @question.alternativa_d %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_e) %>:</strong></dt>
+  <dd><%= @question.alternativa_e %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternativa_correta) %>:</strong></dt>
+  <dd><%= @question.alternativa_correta %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
+  <dd><%= @question.tags %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              questions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_question_path(@question), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              question_path(@question),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  assunto: MyString
+  enunciado: MyText
+  alternativa_a: MyString
+  alternativa_b: MyString
+  alternativa_c: MyString
+  alternativa_d: MyString
+  alternativa_e: MyString
+  alternativa_correta: MyString
+  tags: MyString
+
+two:
+  assunto: MyString
+  enunciado: MyText
+  alternativa_a: MyString
+  alternativa_b: MyString
+  alternativa_c: MyString
+  alternativa_d: MyString
+  alternativa_e: MyString
+  alternativa_correta: MyString
+  tags: MyString
