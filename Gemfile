@@ -26,7 +26,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'devise'
 gem 'cancan'
-gem 'kaminari'
+gem 'will_paginate-bootstrap'
 gem 'simple_form'
 
 
