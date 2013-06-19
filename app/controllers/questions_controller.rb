@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
+  before_filter :authenticate_user!
   load_and_authorize_resource
   def index
     @questions = Question.paginate(:page => params[:page], :per_page => 5)

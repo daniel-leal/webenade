@@ -1,0 +1,9 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%= simple_form_for @about, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :conteudo, as: :ckeditor %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                abouts_path, :class => 'btn' %>
+  </div>
+<% end %>

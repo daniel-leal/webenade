@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: f3f089d34056c6b1b63fccb659a55c68719c4c9e
+  specs:
+    ckeditor (4.0.4)
+      mime-types
+      orm_adapter
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   cancan
+  ckeditor!
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails

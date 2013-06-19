@@ -7,6 +7,7 @@ class Ability
             can :manage, [Question]
         else
             can :index, [Question]
+            can :show, [About]
         end
 
     # Define abilities for the passed in user here. For example:

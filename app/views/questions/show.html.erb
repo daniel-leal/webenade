@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:assunto) %>:</strong></dt>
   <dd><%= @question.assunto %></dd>
   <dt><strong><%= model_class.human_attribute_name(:enunciado) %>:</strong></dt>
-  <dd><%= @question.enunciado %></dd>
+  <dd><%= raw(@question.enunciado) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alternativa_a) %>:</strong></dt>
   <dd><%= @question.alternativa_a %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alternativa_b) %>:</strong></dt>

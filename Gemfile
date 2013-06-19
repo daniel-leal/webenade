@@ -28,6 +28,7 @@ gem 'devise'
 gem 'cancan'
 gem 'will_paginate-bootstrap'
 gem 'simple_form'
+gem "ckeditor", :git => "git://github.com/galetahub/ckeditor.git"
 
 
 

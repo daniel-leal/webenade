@@ -1,7 +1,8 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
 <%= simple_form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.association :course, :as => :select, :prompt => 'Selecione o curso', :label_method => :nome, label: "Curso" %>
   <%= f.input :assunto %>
-  <%= f.input :enunciado %>
+  <%= f.input :enunciado, as: :ckeditor %>
   <%= f.input :alternativa_a %>
   <%= f.input :alternativa_b %>
   <%= f.input :alternativa_c %>

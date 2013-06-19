@@ -1,5 +1,8 @@
 Webenade::Application.routes.draw do
 
+  resources :abouts
+
+
   get "home/index"
   devise_for :users
   resources :questions
