@@ -7,12 +7,19 @@ class User < ActiveRecord::Base
            :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :username, :nome
+  attr_accessible :email, :password, :password_confirmation, :username, :nome, :role_id
   # attr_accessible :title, :body
 
   validates_presence_of :username, message: "O campo username é obrigatório."
   validates_presence_of :nome, message: "O campo nome é obrigatório."
   
   validates_uniqueness_of :username, message: "Nome do usuário já existente."
+
+
+  belongs_to :role
+
+  def has_role?(r)
+     true if role.nome == r
+  end
 
 end

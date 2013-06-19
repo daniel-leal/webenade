@@ -47,7 +47,7 @@
                 <%= menu_item "Cadastre-se", new_user_registration_path %>
             <% else %>
                 <%= menu_item glyph(:user)+" "+current_user.email, edit_user_registration_path(current_user) %>
-                <%= menu_item "Sair", destroy_user_session_path(current_user), method: :delete %>
+                <%= menu_item "Sair", destroy_user_session_path, method: :delete %>
             <% end %>
         <% end %>
     <% end %>
@@ -57,10 +57,10 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div><!--/row-->
-
-      <footer class="pull-right">
-        <p>&copy; 2013 WebEnade. All rights reserved.</p>
-      </footer>
+        <hr>
+        <footer class="pull-right">
+            <p>&copy; 2013 WebEnade. All rights reserved.</p>
+        </footer>
 
     </div> <!-- /container -->
 
