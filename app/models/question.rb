@@ -10,4 +10,12 @@ class Question < ActiveRecord::Base
 
 
 	belongs_to :course
+
+	def self.search(search)
+	  if search
+	    find(:all, :conditions => ['course_id = ?', "#{search}"])
+	  else
+	    find(:all)
+	  end
+	end
 end

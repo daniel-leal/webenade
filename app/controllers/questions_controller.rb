@@ -4,8 +4,8 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   def index
-    @questions = Question.paginate(:page => params[:page], :per_page => 5)
-
+    @questions = Question.search(params[:search])
+    @courses = Course.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
