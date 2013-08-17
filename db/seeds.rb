@@ -12,4 +12,18 @@ r1.save
 
 r2 = Role.new
 r2.nome = "aluno"
-r2.save 
+r2.save
+
+r3 = Role.new
+r3.nome = "admin"
+r3.save
+
+u1 = User.new
+u1.email = "admin@gmail.com"
+u1.password = "123456"
+u1.username = "admin"
+u1.nome = "admin"
+u1.role_id = 3
+
+attr_accessible :email, :password, :password_confirmation, :username, :nome, :role_id
+

@@ -5,6 +5,8 @@ class Ability
     user ||= User.new
         if user.has_role?('professor')
             can :manage, [Question]
+        elsif user.has_role?('admin')
+            can :manage, :all
         else
             can :index, [Question]
             can :show, [About]
