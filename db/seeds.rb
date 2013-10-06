@@ -24,6 +24,5 @@ u1.password = "123456"
 u1.username = "admin"
 u1.nome = "admin"
 u1.role_id = 3
-
-attr_accessible :email, :password, :password_confirmation, :username, :nome, :role_id
+u1.save
 

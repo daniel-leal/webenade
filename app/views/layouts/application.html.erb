@@ -75,6 +75,9 @@
                 <%= menu_item glyph(:info)+" Sobre", "/abouts/"+((About.first).id).to_s %>
             <% end %>
             <%= menu_item glyph(:pencil)+" Questões", questions_path %>
+            <% if current_user.present? %>
+                <%= menu_item glyph(:folder_open)+" Cursos", courses_path %>
+            <% end %>
         <% end %>
         <%= menu_group :pull => :right do %>
             <% if !current_user.present? %>
