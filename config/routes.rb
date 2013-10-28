@@ -5,7 +5,14 @@ Webenade::Application.routes.draw do
 
   get "home/index"
   devise_for :users
-  resources :questions
+
+  resources :questions do
+    collection do
+      get 'simulado'
+    end
+  end
+
+
   resources :courses
   root :to => 'home#index'
 

@@ -1,6 +1,8 @@
 class SimuladoController < ApplicationController
-	def create
+	
+	def generate
 		simulado = Simulado.new
-		simulado.gerar_simulado()
+		simulado.gerar_simulado(params[:])
 	end
+
 end

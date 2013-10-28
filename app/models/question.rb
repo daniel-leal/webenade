@@ -18,4 +18,10 @@ class Question < ActiveRecord::Base
 	    find(:all)
 	  end
 	end
+
+
+	def self.gerar_simulado(curso, qtd_questao)
+		Question.where(course_id: curso).order("RAND()").first(qtd_questao)
+	end
+
 end

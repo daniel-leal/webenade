@@ -83,4 +83,12 @@ class QuestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def simulado
+    @courses = Course.all
+    @pesquisa = Question.gerar_simulado(params[:curso], params[:qtd_questao])
+  end
+
+
 end

@@ -1,0 +1,21 @@
+<style type="text/css">
+	.corpo{
+		padding-top: 80px;
+	}
+</style>
+
+<%= form_for questions_path, :html => { :class => 'form-horizontal' } do |f| %>
+	<center class="corpo">
+	  <div class="form-action">
+	  	<div>
+	    <%= label_tag "Curso" %>
+	    <%= select_tag :curso, options_for_select(@courses.collect{ |u| [u.nome, u.id] }) %>
+	    </div><br>
+	    <div>
+		<%= label_tag "Quantidade de questões" %>
+		<%= select_tag :qtd_questao, options_for_select(%w[5 10 15 20]) %>
+		</div><br>
+	    <%= submit_tag "Enviar", class: "btn" %>
+	  <div>
+	</center>
+<% end %>
