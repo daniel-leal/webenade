@@ -87,7 +87,18 @@ class QuestionsController < ApplicationController
 
   def simulado
     @courses = Course.all
-    @pesquisa = Question.gerar_simulado(params[:curso], params[:qtd_questao])
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def fazer_simulado
+    @questions = Question.gerar_simulado(params[:curso], params[:qtd_questao])
+
+    respond_to do |format|
+      format.html
+    end
   end
 
 

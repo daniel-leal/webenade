@@ -4,11 +4,14 @@ Webenade::Application.routes.draw do
 
 
   get "home/index"
+  
+
   devise_for :users
 
   resources :questions do
     collection do
-      get 'simulado'
+        get 'simulado'
+        get 'fazer_simulado'    
     end
   end
 
