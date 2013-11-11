@@ -11,7 +11,7 @@ Webenade::Application.routes.draw do
   resources :questions do
     collection do
         get 'simulado'
-        get 'fazer_simulado'    
+        post 'fazer_simulado'    
     end
   end
 

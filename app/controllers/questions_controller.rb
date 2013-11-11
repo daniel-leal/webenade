@@ -87,18 +87,10 @@ class QuestionsController < ApplicationController
 
   def simulado
     @courses = Course.all
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def fazer_simulado
-    @questions = Question.gerar_simulado(params[:curso], params[:qtd_questao])
-
-    respond_to do |format|
-      format.html
-    end
+    @questions = Question.gerar_simulado(params[:curso], params[:qtd_questao].to_i)
   end
 
 

@@ -4,18 +4,18 @@
 	}
 </style>
 
-<%= form_for simulado_questions_path, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_tag fazer_simulado_questions_path, :html => { :class => 'form-horizontal' } do %>
 	<center class="corpo">
 	  <div class="form-action">
 	  	<div>
-	    <%= f.label "Curso" %>
-	    <%= f.select :curso, options_for_select(@courses.collect{ |u| [u.nome, u.id] }) %>
+	    
+	    <%= select_tag :curso, options_for_select(@courses.collect{ |u| [u.nome, u.id] }) %>
 	    </div><br>
 	    <div>
-		<%= f.label "Quantidade de questões" %>
-		<%= f.select :qtd_questao, options_for_select(%w[5 10 15 20]) %>
+		
+		<%= select_tag :qtd_questao, options_for_select(%w[5 10 15 20]) %>
 		</div><br>
-	    <%= f.submit "Enviar", :controller => "questions", :action => "fazer_simulado", :method => "get", class: "btn btn-primary" %>
+	    <%= submit_tag "Enviar", class: "btn btn-primary" %>
 	  <div>
 	</center>
 <% end %>
