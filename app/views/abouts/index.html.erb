@@ -15,7 +15,7 @@
     <% @abouts.each do |about| %>
       <tr>
         <td><%= link_to about.id, about_path(about) %></td>
-        <td><%= about.conteudo %></td>
+        <td><%= raw(about.conteudo) %></td>
         <td><%=l about.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

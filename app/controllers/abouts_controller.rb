@@ -26,11 +26,15 @@ class AboutsController < ApplicationController
   # GET /abouts/new
   # GET /abouts/new.json
   def new
-    @about = About.new
+    if !About.all.empty?
+      redirect_to @about, alert: "Já existe um about criado"
+    else
+      @about = About.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @about }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @about }
+      end
     end
   end
 
@@ -82,4 +86,5 @@ class AboutsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
