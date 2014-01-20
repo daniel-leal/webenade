@@ -3,10 +3,13 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   before_filter :authenticate_user!
   load_and_authorize_resource
+  
   def index
     #@questions = Question.search(params[:search])
+    add_breadcrumb "Listagem de Questões", questions_path
     @questions = Question.paginate(:page => params[:page], :per_page => 5).search(params[:search])
     @courses = Course.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
@@ -16,6 +19,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    add_breadcrumb "Listagem de Questões", questions_path
+    add_breadcrumb "Mostrar Questão", question_path(@question)
     @question = Question.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +32,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
+    add_breadcrumb "Listagem de Questões", questions_path
+    add_breadcrumb "Criação da Questão", new_question_path
     @question = Question.new
 
     respond_to do |format|
@@ -38,6 +45,9 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    add_breadcrumb "Listagem de Questões", questions_path
+    add_breadcrumb "Mostrar Questão", question_path(@question)
+    add_breadcrumb "Editar Questão", edit_question_path(@question)
   end
 
   # POST /questions

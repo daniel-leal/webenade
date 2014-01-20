@@ -2,12 +2,12 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   before_filter :authenticate_user!
-  
   load_and_authorize_resource
-  def index
-    add_breadcrumb "Index", courses_path
-    @courses = Course.paginate(:page => params[:page], :per_page => 5)
 
+
+  def index
+    @courses = Course.paginate(:page => params[:page], :per_page => 5)
+    add_breadcrumb "Listagem de Cursos", courses_path
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
@@ -18,7 +18,8 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+    add_breadcrumb "Listagem de Cursos", courses_path
+    add_breadcrumb "Mostrar Curso", course_path(@course)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
@@ -28,6 +29,8 @@ class CoursesController < ApplicationController
   # GET /courses/new
   # GET /courses/new.json
   def new
+    add_breadcrumb "Listagem de Cursos", courses_path
+    add_breadcrumb "Criação do Curso", new_course_path
     @course = Course.new
 
     respond_to do |format|
@@ -39,6 +42,9 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    add_breadcrumb "Listagem de Cursos", courses_path
+    add_breadcrumb "Mostrar Curso", course_path(@course)
+    add_breadcrumb "Editar Curso", edit_course_path(@course)
   end
 
   # POST /courses
@@ -84,4 +90,5 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
