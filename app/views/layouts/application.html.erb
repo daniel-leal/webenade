@@ -93,6 +93,7 @@
     <div class="container">
         <div class="row">
           <%= bootstrap_flash %>
+          <%= render_breadcrumbs('>') if params[:controller] != 'home' %>
           <%= yield %>
         </div><!--/row-->
         <hr>

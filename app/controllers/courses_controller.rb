@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
   
   load_and_authorize_resource
   def index
+    add_breadcrumb "Index", courses_path
     @courses = Course.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|

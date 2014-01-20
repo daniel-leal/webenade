@@ -26,9 +26,10 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'devise'
 gem 'cancan'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap', '~> 0.2.3'
 gem 'simple_form'
 gem "ckeditor", :git => "git://github.com/galetahub/ckeditor.git"
+gem "breadcrumbs_on_rails"
 
 
 
