@@ -1,9 +1,10 @@
 <% @questions.each do |question| %>
+  <hr>
   <p><%= raw(question.enunciado) %></p>
   <p><%= question.alternativa_a %></p>
   <p><%= question.alternativa_b %></p>
   <p><%= question.alternativa_c %></p>
   <p><%= question.alternativa_d %></p>
   <p><%= question.alternativa_e %></p>
-  <hr>
+  
 <% end %>

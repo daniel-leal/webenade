@@ -1,16 +1,13 @@
 <%- model_class = Question -%>
 <div class="page-header">
+  <%= form_tag questions_path, :method => 'get', class: "form-search" do %>
+    <p class="pull-right input-append">
+      <%= select_tag :search, options_for_select(@courses.collect{ |u| [u.nome, u.id] }), class: "search-query" %>
+      <%= submit_tag "Search", :name => nil, class: "btn" %>
+    </p>
+  <% end %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-
-<%= form_tag questions_path, :method => 'get' do %>
-  <p class="pull-right input-append">
-    <%= submit_tag "Search", :name => nil, class: "btn" %>
-  </p>
-  <p class="pull-right">
-    <%= select_tag :search, options_for_select(@courses.collect{ |u| [u.nome, u.id] }) %>
-  </p>
-<% end %>
 
 <table class="table table-striped">
   <thead>
@@ -42,11 +39,12 @@
     <% end %>
   </tbody>
 </table>
+<center>
+  <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>            
+</center>            
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_question_path,
             :class => 'btn btn-primary' %>
 
-<center>
-  <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>            
-</center>            

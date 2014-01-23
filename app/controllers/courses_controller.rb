@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
 
 
   def index
-    @courses = Course.paginate(:page => params[:page], :per_page => 5)
+    @courses = Course.paginate(:page => params[:page], :per_page => 5).search(params[:search])
     add_breadcrumb "Listagem de Cursos", courses_path
     respond_to do |format|
       format.html # index.html.erb
