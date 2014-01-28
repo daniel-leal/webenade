@@ -1,10 +1,8 @@
-<% @questions.each do |question| %>
-  <hr>
-  <p><%= raw(question.enunciado) %></p>
-  <p><%= question.alternativa_a %></p>
-  <p><%= question.alternativa_b %></p>
-  <p><%= question.alternativa_c %></p>
-  <p><%= question.alternativa_d %></p>
-  <p><%= question.alternativa_e %></p>
-  
+<% @questions.each do |q| %>
+  	<hr>
+  	<p><%= raw(q.enunciado) %></p>
+
+  	<%= form_for '/questions' do |f| %>
+			<%= f.collection_radio_buttons :options, [[:alternativa_a, q.alternativa_a] ,[:alternativa_a, q.alternativa_b], [:alternativa_c, q.alternativa_c] ,[:alternativa_d, q.alternativa_d],[:alternativa_e, q.alternativa_e]], :first, :last %>
+	<% end %>
 <% end %>
