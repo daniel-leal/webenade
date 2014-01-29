@@ -13,7 +13,11 @@ class Question < ActiveRecord::Base
 
 	def self.search(search)
 	  if search
-	    find(:all, :conditions => ['course_id = ?', "#{search}"])
+	  	if search.eql?""
+	  		find(:all)
+  		else
+	    	find(:all, :conditions => ['course_id = ?', "#{search}"])
+	    end
 	  else
 	    find(:all)
 	  end

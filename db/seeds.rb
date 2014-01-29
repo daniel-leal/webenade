@@ -6,37 +6,37 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# r1 = Role.new
-# r1.nome = "professor"
-# r1.save
+r1 = Role.new
+r1.nome = "professor"
+r1.save
 
-# r2 = Role.new
-# r2.nome = "aluno"
-# r2.save
+r2 = Role.new
+r2.nome = "aluno"
+r2.save
 
-# r3 = Role.new
-# r3.nome = "admin"
-# r3.save
+r3 = Role.new
+r3.nome = "admin"
+r3.save
 
-# u1 = User.new
-# u1.email = "admin@gmail.com"
-# u1.password = "123456"
-# u1.username = "admin"
-# u1.nome = "admin"
-# u1.role_id = 3
-# u1.save
+u1 = User.new
+u1.email = "admin@gmail.com"
+u1.password = "123456"
+u1.username = "admin"
+u1.nome = "admin"
+u1.role_id = 3
+u1.save
 
-# c = Course.new
-# c.nome = "Ciência da Computação"
-# c.save
+c = Course.new
+c.nome = "Ciência da Computação"
+c.save
 
-# c2 = Course.new
-# c2.nome = "Sistema de Informação"
-# c2.save
+c2 = Course.new
+c2.nome = "Sistema de Informação"
+c2.save
 
-# c3 = Course.new
-# c3.nome = "Engenharia da Computação"
-# c3.save
+c3 = Course.new
+c3.nome = "Engenharia da Computação"
+c3.save
 
 
 q = Question.new

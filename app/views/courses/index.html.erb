@@ -1,4 +1,7 @@
 <%- model_class = Course -%>
+<% if @courses.count <= 0 %>
+    <% flash[:alert] = "No Result Found" %>
+<% end %>
 <div class="page-header">
   <%= form_tag courses_path, :method => 'get', class: "form-search" do %>
     <p class="pull-right input-append">
@@ -8,6 +11,7 @@
   <% end %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
 
 
 

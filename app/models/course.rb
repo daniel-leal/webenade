@@ -8,8 +8,12 @@ class Course < ActiveRecord::Base
 
 
   	def self.search(search)
-	  	if search
-	    	find(:all, :conditions => ['nome = ?', "#{search}"])
+  		if search
+		  	if search.eql?("")
+		    	find(:all)
+		    else
+		    	find(:all, :conditions => ['nome LIKE ?', "%#{search}%"])
+		    end
 	  	else
 			find(:all)
 	  	end
