@@ -32,8 +32,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
-    add_breadcrumb "Listagem de Questões", questions_path
-    add_breadcrumb "Criação da Questão", new_question_path
+    add_breadcrumb "Listagem das Questões", questions_path
+    add_breadcrumb "Incluir Questão", new_question_path
     @question = Question.new
 
     respond_to do |format|
@@ -57,7 +57,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @question, notice: 'A questão foi incluida com sucesso' }
         format.json { render json: @question, status: :created, location: @question }
       else
         format.html { render action: "new" }
@@ -73,7 +73,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to @question, notice: 'A questão foi atualizada com sucesso' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

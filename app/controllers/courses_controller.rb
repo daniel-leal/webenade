@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     add_breadcrumb "Listagem de Cursos", courses_path
-    add_breadcrumb "Criação do Curso", new_course_path
+    add_breadcrumb "Incluir Curso", new_course_path
     @course = Course.new
 
     respond_to do |format|
@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'O curso foi incluido com sucesso' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }
@@ -70,7 +70,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to @course, notice: 'O curso foi atualizado com sucesso' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

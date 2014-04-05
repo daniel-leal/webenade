@@ -1,8 +1,7 @@
 <%= simple_form_for @course, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :nome %>
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                courses_path, :class => 'btn' %>
+    <%= f.submit "Salvar", :class => 'btn btn-primary' %>
+    <%= link_to "Cancelar", courses_path, :class => 'btn' %>
   </div>
 <% end %>
