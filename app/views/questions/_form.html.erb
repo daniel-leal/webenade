@@ -41,10 +41,17 @@
     </div>
   </div>
 
-  <%= f.input :alternativa_correta, collection: 'A'..'E', include_blank: false, :input_html => { class: "span1"} %>
+  <div class="row">
+    <div class="span6">
+      <%= f.input :alternativa_correta, collection: 'A'..'E', include_blank: false, :input_html => { class: "span1"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :nivel, collection: '1'..'5', include_blank: false, :input_html => { class: "span1"} %>
+    </div>
+  </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit "Salvar", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 questions_path, :class => 'btn' %>
   </div>
