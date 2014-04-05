@@ -43,8 +43,12 @@
             <% if !About.all.empty? %>
                 <%= menu_item glyph(:info)+" Sobre", "/abouts/"+((About.first).id).to_s %>
             <% end %>
-            <%= menu_item glyph(:pencil)+" Questões", questions_path %>
-            <%= menu_item glyph(:folder_open)+" Cursos", courses_path %>
+            <% if current_user.present? && (current_user.has_role?('admin') || current_user.has_role?('professor'))%>
+                <%= menu_item glyph(:pencil)+" Questões", questions_path %>
+                <%= menu_item glyph(:folder_open)+" Cursos", courses_path %>
+            <% elsif current_user.present? && current_user.has_role?('aluno') %>
+                <%= menu_item glyph(:pencil)+" Resolver Questões", simulado_questions_path %>
+            <% end %>
         <% end %>
         <%= menu_group :pull => :right do %>
             <% if !current_user.present? %>

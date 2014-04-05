@@ -8,7 +8,8 @@ class Ability
         elsif user.has_role?('admin')
             can :manage, :all
         else
-            can :index, [Question]
+            can :simulado, [Question]
+            can :fazer_simulado, [Question]
             can :show, [About]
         end
 
