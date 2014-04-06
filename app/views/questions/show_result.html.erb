@@ -1,0 +1,9 @@
+ACERTOU: <%= @correct_questions%>
+<br />
+ERROU:
+<%@fixed.each do |enuc, correct|%>
+    <p>
+        Questão: <%= enuc %><br />
+        Alternativa Correta Era:<%= correct%>
+    </p>
+<%end%>

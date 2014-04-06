@@ -11,6 +11,7 @@ class Ability
             can :simulado, [Question]
             can :fazer_simulado, [Question]
             can :show, [About]
+            can :show_result, [Question]
         end
 
     # Define abilities for the passed in user here. For example:

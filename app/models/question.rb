@@ -27,5 +27,9 @@ class Question < ActiveRecord::Base
 	def self.gerar_simulado(curso, qtd_questao)
 		Question.where(course_id: curso).order("RAND()").limit(qtd_questao)
 	end
+	
+	def is_correct?(val)
+	  alternativa_correta == val
+	end
 
 end

@@ -1,8 +1,15 @@
-<%= form_for '/questions' do |f| %>
+<%= form_tag fazer_simulado_questions_path do |f| %>
+	
 	<% @questions.each do |q| %>
+	    <%= hidden_field_tag "questions_#{q.id}", q.id%>
 	  	<hr>
 	  	<p><%= raw(q.enunciado) %></p>
-		<%= f.collection_radio_buttons :options, [[:alternativa_a, "A) " + q.alternativa_a] ,[:alternativa_b, "B) "+q.alternativa_b], [:alternativa_c, "C) "+q.alternativa_c] ,[:alternativa_d, "D) "+q.alternativa_d],[:alternativa_e, "E) "+q.alternativa_e]], :first, :last %>
+		<%= radio_button_tag "options_#{q.id}", "A" %><%= label "options_#{q.id}", "A) #{q.alternativa_a}"%>
+		<%= radio_button_tag "options_#{q.id}", "B" %><%= label "options_#{q.id}", "B) #{q.alternativa_b}"%>
+		<%= radio_button_tag "options_#{q.id}", "C" %><%= label "options_#{q.id}", "C) #{q.alternativa_c}"%>
+		<%= radio_button_tag "options_#{q.id}", "D" %><%= label "options_#{q.id}", "D) #{q.alternativa_d}"%>
+		<%= radio_button_tag "options_#{q.id}", "E" %><%= label "options_#{q.id}", "E) #{q.alternativa_e}"%>
+		
 	<% end %>
-	<br><%= f.submit "Corrigir", class: "btn btn-primary" %>
+	<br><%= submit_tag "Corrigir", class: "btn btn-primary" %>
 <% end %>

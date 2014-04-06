@@ -13,9 +13,11 @@ Webenade::Application.routes.draw do
   resources :questions do
     collection do
         get 'simulado'
-        post 'fazer_simulado'    
+        post 'fazer_simulado'
     end
   end
+  #ROTA DO RESULTADO
+  get '/questions/:total/show_result' => 'questions#show_result', :as => 'show_result'
 
 
   resources :courses
