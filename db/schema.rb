@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140405185948) do
+ActiveRecord::Schema.define(:version => 20140409015103) do
 
   create_table "abouts", :force => true do |t|
     t.text     "conteudo"
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(:version => 20140405185948) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",              :default => "", :null => false
     t.string   "encrypted_password", :default => "", :null => false
@@ -70,7 +75,8 @@ ActiveRecord::Schema.define(:version => 20140405185948) do
     t.string   "nome",                               :null => false
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
-    t.integer  "role_id"
+    t.string   "institution"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

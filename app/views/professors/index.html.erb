@@ -1,0 +1,35 @@
+<%- model_class = Professor -%>
+<div class="page-header">
+  <h1>Professores</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Instituição</th>
+      <th style="width: 2%">Ações</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @professors.each do |professor| %>
+      <tr>
+        <td><%= link_to professor.id, professor_path(professor) %></td>
+        <td><%= professor.nome %></td>
+        <td><%= professor.email %></td>
+        <td><%= professor.institution %></td>
+        <td><%= link_to 'Edit', edit_professor_path(professor), class: "btn btn-mini" %></td>
+        <td><%= link_to 'Destroy', professor, class: "btn btn-mini btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>    
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_professor_path,
+            :class => 'btn btn-primary' %>

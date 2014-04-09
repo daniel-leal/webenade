@@ -1,16 +1,20 @@
-<h2>Registrar</h2>
+<div class="page-header">
+	<h2>Registrar</h2>
+</div>
 
-<%= simple_form_for(resource, :as => :aluno, :url => registration_path(:aluno)) do |f| %>
+<%= simple_form_for @aluno, :html => { :class => 'form-horizontal' } do |f| %>
 
   <%= f.input :username %>
   <%= f.input :nome %>
   <%= f.input :email, placeholder: 'user@domain.com' %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
-  <% if current_user != nil && current_user.role?('admin') %>
+  <%= f.input :institution, label: "Instituição" %>
+  <% if false %>
   	<%= f.association :role, label_method: :nome, value_method: :id, include_blank: false, as: :radio_buttons, label: "Tipo de usuário" %>
   <% end %>
   
-  <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
+  <div><%= f.submit "Registrar", class: "btn btn-primary" %></div>
 <% end %>
+
 

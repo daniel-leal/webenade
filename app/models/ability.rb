@@ -12,6 +12,9 @@ class Ability
             can :fazer_simulado, [Question]
             can :show, [About]
             can :show_result, [Question]
+            can :create, [Aluno]
+            can :show, [Aluno]
+            can :new, [Aluno]
         end
 
     # Define abilities for the passed in user here. For example:

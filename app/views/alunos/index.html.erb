@@ -1,0 +1,35 @@
+<%- model_class = Aluno -%>
+<div class="page-header">
+  <h1>Alunos</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Instituição</th>
+      <th style="width: 2%">Ações</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @alunos.each do |aluno| %>
+      <tr>
+        <td><%= link_to aluno.id, aluno_path(aluno) %></td>
+        <td><%= aluno.nome %></td>
+        <td><%= aluno.email %></td>
+        <td><%= aluno.institution %></td>
+        <td><%= link_to 'Edit', edit_aluno_path(aluno), class: "btn btn-mini" %></td>
+        <td><%= link_to 'Destroy', aluno, class: "btn btn-mini btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>    
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_aluno_path,
+            :class => 'btn btn-primary' %>

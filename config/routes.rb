@@ -1,5 +1,11 @@
 Webenade::Application.routes.draw do
 
+  resources :professors
+
+
+  resources :alunos
+
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :abouts
